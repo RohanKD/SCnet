@@ -1,0 +1,56 @@
+
+    h1 {
+      text-align: center;
+      font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+      font-size: 25px;
+    }
+    body {
+      padding-left: 11em;
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      margin: 50px 400px 190px 50px;
+    }
+    body::before {
+      content: "";
+      background-image: url('../img/brain-cell.jpeg');
+      opacity: 0.1;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      z-index: -1;
+    }
+    .input-element {
+      font-size: 12px
+    }
+    ul.navbar {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      width: 9em;
+    }
+    ul.navbar li {
+      background: gray;
+      margin: 0.5em 0;
+      padding: 0.3em;
+      border-right: 1em solid black;
+    }
+    ul.navbar a {
+      text-decoration: none 
+    }
+    a:link {
+      color: black;
+    }
+    a:visited {
+      color: darkgray;
+    }
+    address {
+      margin-top: 1em;
+      padding-top: 1em;
+      border-top: thin dotted;
+    }
+    

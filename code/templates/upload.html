@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+  <title>Cellcano: A neural network for predicting mice brain cell types.</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cellcano.css') }}"/>
+</head>
+
+
+<body>
+    <h1>Cellcano: A neural network for predicting mice brain cell types.</h1>
+
+    <h2>Your upload has sucessfully completed.</h2>
+    <h3>Results here....{{ prediction }}</h3>
+    
+
+    {% for mesg in get_flashed_messages() %}
+    alert({{ mesg }})
+    {% endfor %}
+
+<!-- Site navigation menu -->
+<ul class="navbar">
+  <li><a href="cellcano">Home page</a>
+  <li><a href="links">References</a>
+</ul>
+
+
+</body>
+</html>

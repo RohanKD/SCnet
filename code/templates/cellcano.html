@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+  <title>Cellcano: A neural network for predicting mice brain cell types.</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cellcano.css') }}"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.css">
+</head>
+
+<body>
+
+<!-- Site navigation menu -->
+<ul class="navbar">
+  <li><a href="cellcano">Home page</a>
+  <li><a href="links">References</a>
+</ul>
+<h1>Cellcano: A neural network for predicting mice brain cell types.</h1>
+
+{% for mesg in get_flashed_messages() %}
+<h1>{{ mesg }}</h1>
+{% endfor %}
+
+<div center>
+  Our neural network has been trained on large datasets that have been annotated for gene expression. Please upload a file that 
+  represents gene data for a mice brain cell. The output will be the predicted brain-cell type.
+</div>
+
+<!--
+<address/>
+<form action="http://localhost:5000/upload" class="dropzone">
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.js"></script>
+-->
+<address></address>
+
+<form action = "http://localhost:5000/upload" method = "POST" enctype = "multipart/form-data">
+  <input type = "file" 
+         id = "file" 
+         name = "file"
+         class = "input-element" />
+  <input type = "submit"
+         class = "input-element" />
+</form>
+
+
+<!-- Sign and date the page, it's only polite! -->
+<address>August 2022<br>
+Rohan K. Dalal<br>
+Fracis Wu</address>
+
+</body>
+</html>
+
