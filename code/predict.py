@@ -18,11 +18,10 @@ import _utils_new
 
 # change args
 def predict():
-    # find how to load properly
+    
     model = tf.keras.models.load_model("my_model")
 
-    # load feature file and onehotencoder enumeration file, find them first by training
-    # CHANGE
+    
     feature_file = "C:\\Users\\rohan\\PycharmProjects\\SciFaitEmory\\code\\models\\features.txt"
     encoder_file = "C:\\Users\\rohan\\PycharmProjects\\SciFaitEmory\\code\\models\\encoders.txt"
 
@@ -86,13 +85,11 @@ def predict():
     y_pred = tf.nn.softmax(model.predict(test_data_mat)).numpy()
     pred_celltypes = _utils_new._prob_to_label(y_pred, encoders)
     test_adata.obs[_utils_new.PredCelltype_COLUMN] = pred_celltypes
-    # change output file
-    # change filepath
+ 
     test_adata.obs[['pred_celltype']].to_csv(
         "C:\\Users\\rohan\\PycharmProjects\\SciFaitEmory\\code\\predictition_files\\output.csv")
 
-    return "done"
 
 
 if __name__ == "__main__":
-    print(predict())
+    predict()
